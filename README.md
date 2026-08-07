@@ -1,155 +1,171 @@
-# 💼 Zecovery — Payment & Document Management Systems / Sistemas de Pago y Gestión Documental
+# 💼 Zecovery — Payments & Document Systems Case Study
 
-> 🇬🇧 English version below — Versión en español más abajo ⬇️
+> Professional portfolio case study. Original source code and proprietary implementation details are not included.
 
----
+## 🇬🇧 English
 
-## 🇬🇧 English Version
+### Context
 
-### 🧩 Context
+At **Zecovery** I worked as a **Full Stack Developer / Software Engineer** on systems used by municipalities and other organizations in Chile.
 
-At **Zecovery**, I worked as a **Software Engineer** leading multiple projects focused on process optimization, digital payments, and document management for municipalities and public institutions in Chile.
+The work involved digital payments, document workflows, secure file delivery and modernization of existing applications.
 
-The company’s main challenge was handling high transaction volumes securely and automating workflows across different systems.
+### Selected problems I worked on
 
-### 🎯 Objective
+#### Municipal payment workflows
 
-Develop robust and scalable systems that support daily financial and document operations for municipal and enterprise clients, while maintaining strict reliability and data integrity.
+I worked on **SEM2**, a platform used for municipal procedures such as licenses, permits and vehicle-related payments.
 
-### ⚙️ Tech Stack
+The system had to support high daily transaction volumes while keeping the application modular and maintainable.
 
-| Project                              | Backend    | Frontend       | Database   | Infrastructure / Tools  |
-| ------------------------------------ | ---------- | -------------- | ---------- | ----------------------- |
-| **SEM2 (Municipal Payment System)**  | Laravel 9  | Vue 2          | PostgreSQL | Docker, GitLab CI       |
-| **Temporary File URL System (AWS)**  | Laravel 9  | Vue 2          | PostgreSQL | AWS S3, Pre-signed URLs |
-| **Zefactura (Electronic Invoicing)** | Laravel 10 | Vue 3 + NuxtJS | PostgreSQL | Docker, GitLab CI       |
-| **Ceropapel (Document Management)**  | PHP 5/7/8  | jQuery + JS    | PostgreSQL | Apache, Linux           |
+My work included:
 
----
+- backend development with **Laravel**;
+- frontend work with **Vue**;
+- **PostgreSQL** persistence;
+- REST communication between services;
+- reusable modules shared across different municipal procedures;
+- automated testing and deployment practices.
 
-### 🚀 Key Achievements
+According to my professional project record, the platform processed **thousands of payments per day**.
 
+#### Secure temporary file delivery
 
-* **SEM2** was architected as a **microservice ecosystem**, where each municipal procedure (license, permit, patent, etc.) was developed as an independent service.
-* Central shared modules — such as **Users**, **Accounts**, and **Procedures** — acted as core packages, reused across all services.
-* Designed lightweight **RESTful communication** between microservices and internal event-driven jobs for data synchronization.
-
-* Applied **TDD (Test-Driven Development)** across Laravel projects to ensure payment accuracy, data consistency, and maintainability.
-* Implemented a **secure AWS API for temporary file access**, generating signed URLs with expiration for user downloads.
-* Built **Zefactura**, a modular invoicing system capable of generating and validating electronic invoices for multiple institutions.
-* Designed **unit and functional tests** to validate invoice data integrity and backend workflows.
-* Provided long-term **support for Ceropapel**, improving document workflows and upgrading legacy PHP code to modern versions.
-
----
-
-### 🧱 Architecture Overview
+I designed a mechanism for controlled access to files stored in **AWS**, exposing an API that generated temporary download URLs with expiration.
 
 ```text
-[ Vue Frontend ] ↔ [ Laravel API ] ↔ [ PostgreSQL ]
-                            │
-                            ├──→ [ AWS S3 (Temporary Signed URLs) ]
-                            ├──→ [ Electronic Invoice API (Zefactura) ]
-                            └──→ [ Payment Gateway Integration (SEM2) ]
+[ Client request ]
+       │
+       ▼
+[ Laravel API ]
+       │
+       ▼
+[ Authorization / validation ]
+       │
+       ▼
+[ AWS S3 signed URL ]
+       │
+       ▼
+[ Time-limited download ]
 ```
 
----
+This pattern allowed files to remain private while applications could grant temporary access when required.
 
-### 🧪 Engineering Practices
+#### Electronic invoicing and legacy systems
 
-* Full **TDD workflow** (unit + feature + integration tests).
-* Continuous Integration with **GitLab CI/CD pipelines**.
-* Code review culture and reusable backend modules.
-* Agile methodology for fast iteration and delivery.
-* Use of **Docker containers** for consistent environments.
+Other work included:
 
----
+- modular electronic invoicing workflows;
+- unit and functional testing around financial data;
+- maintaining document-management applications;
+- modernizing legacy PHP code while preserving business continuity.
 
-### 🧾 Impact
+### Technology stack
 
-* Improved payment processing reliability for many **municipalities**.
-* Reduced deployment errors through Dockerized environments.
-* Achieved **90%+ test coverage** on core financial and invoicing modules.
-* Enhanced backend resilience with automated exception handling and monitoring.
+| Area | Technologies |
+| --- | --- |
+| Backend | PHP, Laravel |
+| Frontend | Vue, Nuxt, JavaScript, jQuery |
+| Database | PostgreSQL |
+| Cloud / storage | AWS S3, signed URLs |
+| Infrastructure | Docker, Linux |
+| Delivery | GitLab CI/CD |
+| Engineering | REST APIs, automated tests, TDD practices |
 
----
+### What this experience demonstrates
 
-## 🇪🇸 Versión en Español
-
-### 🧩 Contexto
-
-En **Zecovery**, trabajé como **Ingeniero de Desarrollo** liderando diversos proyectos orientados a la optimización de procesos, pagos digitales y gestión documental para municipalidades e instituciones públicas en Chile.
-
-El principal desafío era manejar altos volúmenes de transacciones con seguridad y automatizar flujos críticos en entornos mixtos de tecnologías modernas y heredadas.
-
-### 🎯 Objetivo
-
-Desarrollar sistemas robustos y escalables que soporten las operaciones financieras y documentales diarias de clientes municipales y empresariales, asegurando confiabilidad e integridad de datos.
-
-### ⚙️ Stack Tecnológico
-
-| Proyecto                                | Backend    | Frontend       | Base de Datos | Infraestructura / Herramientas |
-| --------------------------------------- | ---------- | -------------- | ------------- | ------------------------------ |
-| **SEM2 (Sistema de Pagos Municipales)** | Laravel 9  | Vue 2          | PostgreSQL    | Docker, GitLab CI              |
-| **Sistema de URLs Temporales (AWS)**    | Laravel 9  | Vue 2          | PostgreSQL    | AWS S3, URLs Firmadas          |
-| **Zefactura (Facturación Electrónica)** | Laravel 10 | Vue 3 + NuxtJS | PostgreSQL    | Docker, GitLab CI              |
-| **Ceropapel (Gestión Documental)**      | PHP 5/7/8  | jQuery + JS    | PostgreSQL    | Apache, Linux                  |
+- Experience with **payment and transaction-oriented systems**.
+- Ability to integrate **cloud services and secure file-access workflows**.
+- Experience evolving both modern and legacy applications.
+- Strong understanding of backend business rules and data integrity.
+- Ability to work across backend, frontend, infrastructure and testing when the project requires it.
 
 ---
 
-### 🚀 Logros Destacados
+## 🇪🇸 Español
 
-* **SEM2** fue diseñado bajo una **arquitectura de microservicios**, donde cada trámite (licencia, permiso, patente, etc.) se implementó como un servicio independiente.
-* Se crearon **paquetes centrales compartidos** — como **Usuarios**, **Cuentas** y **Trámites** — utilizados transversalmente por todos los microservicios.
-* Comunicación interna mediante **APIs RESTful ligeras** y sincronización de datos con procesos asíncronos tipo evento.
-* Aplicación de **TDD (Desarrollo Guiado por Pruebas)** en Laravel para garantizar exactitud en pagos y confiabilidad de datos.
-* Implementación de un sistema **AWS S3 con URLs temporales**, generadas mediante APIs seguras y control de expiración.
-* Creación del sistema **Zefactura**, modular y adaptable para la generación y validación de facturas electrónicas.
-* Implementación de **pruebas unitarias y funcionales** para garantizar integridad y precisión en los datos.
-* Soporte y evolución del sistema **Ceropapel**, modernizando su arquitectura PHP y mejorando la gestión documental.
+### Contexto
 
----
+En **Zecovery** trabajé como **Desarrollador Full Stack / Ingeniero de Software** en sistemas utilizados por municipalidades y otras organizaciones en Chile.
 
-### 🧱 Arquitectura General
+Mi trabajo involucró pagos digitales, flujos documentales, entrega segura de archivos y modernización de aplicaciones existentes.
+
+### Problemas representativos
+
+#### Flujos de pagos municipales
+
+Trabajé en **SEM2**, una plataforma utilizada para trámites municipales como patentes, permisos y pagos relacionados con vehículos.
+
+El sistema debía soportar un volumen importante de transacciones manteniendo una arquitectura modular y mantenible.
+
+Mi participación incluyó:
+
+- desarrollo backend con **Laravel**;
+- frontend con **Vue**;
+- persistencia con **PostgreSQL**;
+- comunicación REST entre servicios;
+- módulos reutilizables para distintos trámites;
+- pruebas automatizadas y prácticas de despliegue.
+
+De acuerdo con mi registro profesional del proyecto, la plataforma procesaba **miles de pagos al día**.
+
+#### Entrega segura de archivos temporales
+
+Diseñé un mecanismo para entregar acceso controlado a archivos almacenados en **AWS**, mediante una API que generaba URLs temporales con expiración.
 
 ```text
-[ Frontend Vue ] ↔ [ API Laravel ] ↔ [ PostgreSQL ]
-                         │
-                         ├──→ [ AWS S3 (URLs Temporales Firmadas) ]
-                         ├──→ [ API Facturación Electrónica (Zefactura) ]
-                         └──→ [ Integración Pasarelas de Pago (SEM2) ]
+[ Solicitud cliente ]
+       │
+       ▼
+[ API Laravel ]
+       │
+       ▼
+[ Autorización / validación ]
+       │
+       ▼
+[ URL firmada AWS S3 ]
+       │
+       ▼
+[ Descarga temporal ]
 ```
 
+Esto permitía mantener los archivos privados y entregar acceso únicamente durante el periodo autorizado.
+
+#### Facturación electrónica y sistemas legacy
+
+Otros trabajos incluyeron:
+
+- flujos modulares de facturación electrónica;
+- pruebas unitarias y funcionales sobre procesos financieros;
+- mantenimiento de sistemas de gestión documental;
+- modernización de código PHP legacy sin interrumpir la continuidad operacional.
+
+### Stack tecnológico
+
+| Área | Tecnologías |
+| --- | --- |
+| Backend | PHP, Laravel |
+| Frontend | Vue, Nuxt, JavaScript, jQuery |
+| Base de datos | PostgreSQL |
+| Cloud / almacenamiento | AWS S3, URLs firmadas |
+| Infraestructura | Docker, Linux |
+| Entrega | GitLab CI/CD |
+| Ingeniería | REST APIs, pruebas automatizadas, prácticas TDD |
+
+### Qué demuestra esta experiencia
+
+- Experiencia con **sistemas transaccionales y de pagos**.
+- Integración de **servicios cloud y acceso seguro a archivos**.
+- Capacidad para evolucionar aplicaciones modernas y legacy.
+- Comprensión de reglas de negocio backend e integridad de datos.
+- Capacidad full stack cuando el problema requiere intervenir en distintas capas.
+
 ---
 
-### 🧪 Buenas Prácticas
+## Contact
 
-* Flujo completo de **TDD** (pruebas unitarias, funcionales e integraciones).
-* Integración Continua con **GitLab CI/CD**.
-* Modularización del backend y revisiones de código.
-* Metodología **ágil** para desarrollo iterativo.
-* Uso de **contenedores Docker** para garantizar entornos reproducibles.
+**Rodrigo Guerra Cortés**  
+Backend & Integration Engineer — Chile 🇨🇱  
+[GitHub Profile](https://github.com/RodrigoGuerraCortes) · [LinkedIn](https://www.linkedin.com/in/rodrigo-guerra-cortes) · [Email](mailto:rguerracortes@gmail.com)
 
----
-
-### 🧽 Impacto
-
-* Mayor confiabilidad en el procesamiento de pagos de muchas **municipalidades**.
-* Reducción de errores de despliegue mediante entornos dockerizados.
-* **Cobertura de pruebas superior al 90 %** en módulos financieros y de facturación.
-* Aumento de resiliencia del backend con manejo automático de excepciones y monitoreo.
-
----
-
-## 👨‍💻 Author
-
-**Rodrigo Guerra Cortés**
-Full Stack Developer — Chile 🇨🇱
-📧 [rguerracortes@gmail.com](mailto:rguerracortes@gmail.com)
-🌐 [LinkedIn](https://linkedin.com/in/rodrigoguerracortes)
-
----
-
-## 🧪 License
-
-This documentation is part of Rodrigo Guerra’s professional portfolio.
-All source code for the original Zecovery systems is private and owned by the company.
+> This repository contains a high-level description of professional work only. No proprietary source code, credentials or confidential client information is included.
